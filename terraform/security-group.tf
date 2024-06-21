@@ -1,5 +1,5 @@
 resource "aws_security_group" "thrive_roadshow" {
-  vpc_id = aws_vpc.soldevlife.id
+  vpc_id = aws_vpc.thrive_roadshow.id
 
   ingress {
     from_port   = 27017

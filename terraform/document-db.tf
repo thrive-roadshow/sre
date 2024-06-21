@@ -1,15 +1,15 @@
 resource "aws_db_subnet_group" "thrive_roadshow" {
   name        = "thrive-roadshow"
   description = "thrive-roadshow"
-  subnet_ids  = [aws_subnet.private_ap_southeast_1a.id, aws_subnet.private_ap_southeast_1b.id]
+  subnet_ids  = [aws_subnet.public_ap_southeast_1a.id, aws_subnet.public_ap_southeast_1b.id]
 }
 
 resource "aws_docdb_cluster" "thrive_roadshow" {
   cluster_identifier   = "thrive-roadshow"
   engine               = "docdb"
   engine_version       = "5.0.0"
-  master_username      = "admin"
-  master_password      = "password"
+  master_username      = "thrive"
+  master_password      = "p4ssW0rD"
   apply_immediately    = true
   db_subnet_group_name = aws_db_subnet_group.thrive_roadshow.name
   tags = {
